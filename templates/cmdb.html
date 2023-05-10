@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <!link rel=stylesheet type=text/css href="style.css">
+		<meta http-equiv=“Content-Type” content=“text/html; charset=utf-8”>
+		<meta name="viewport" content="width=410, initial-scale=0.90">
+    </head>
+    <body>
+
+<style>
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+}
+.mytabs input[type="radio"] {
+    display: none;
+}
+.mytabs label {
+    padding: 15px;
+    background: #e2e2e2;
+    font-weight: bold;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	margin: 3px 3px 0px 0px;
+}
+.mytabs label:hover {
+    background: #d5d5d5;
+    margin-top: -3px;
+    padding-top: 18px;
+    transition: 0.4s;
+}
+
+.mytabs .tab {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    order: 1;
+    display: none;
+}
+.mytabs .tab h2 {
+    font-size: 3em;
+}
+.mytabs input[type='radio']:checked + label + .tab {
+    display: block;
+}
+.mytabs input[type="radio"]:checked + label {
+    background: #fff;
+}
+</style>
+
+
+    <div class="container">
+	  <div class="content">
+	  <h1><b>CMDB</b></h1>
+
+		<div class="mytabs">
+			<input type="radio" id="tabfree" name="mytabs" checked="checked">
+			<label for="tabfree">VMs</label>
+			<div class="tab">
+			<p>
+				<table align="center" width=90% border=1 style="border-collapse:collapse;">
+				{% for vm in vms %}
+				<tr>
+				<td width="50%">
+					{{ vm }}
+				<td width="50%">
+					{{ vms[vm] }}
+				{% endfor %}
+				</table> 
+			</p>
+			</div>
+		
+			<input type="radio" id="tabsilver" name="mytabs">
+			<label for="tabsilver">Quotas</label>
+			<div class="tab">
+			<p>
+				<table align="center" width=90% border=1 style="border-collapse:collapse;">
+				{% for quota in quotas %}
+				<tr>
+				<td width="50%">
+					{{ quota }}
+				<td width="50%">
+					{{ quotas[quota] }}
+				{% endfor %}
+				</table>		
+			</p>
+			</div>
+		
+			<input type="radio" id="tabgold" name="mytabs">
+			<label for="tabgold">Teams</label>
+			<div class="tab">
+			<p>
+				<table align="center" width=90% border=1 style="border-collapse:collapse;">
+				{% for user in teams %}
+				<tr>
+				<td width="50%">
+					{{ user }}
+				<td width="50%">
+					{{ teams[user] }}
+				{% endfor %}
+				</table>
+
+			</p>
+			</div>
+		
+		</div>
+
+		<img src="static/dell_emc_logo.png" width="300">
+	  </div>
+	</div>
+    </body>
+</html>
+  
+ 

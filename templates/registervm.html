@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <!link rel=stylesheet type=text/css href="style.css">
+		<meta http-equiv=“Content-Type” content=“text/html; charset=utf-8”>
+		<meta name="viewport" content="width=410, initial-scale=0.90">
+		
+		<script>
+		 function showpolicy(pol) {
+			var val;
+			switch (pol.value) {
+                case 'gold': val = 'Weekly Full plus daily incrementals\n7 year retention\n$3/month'; break;
+                case 'silver': val = 'Weekly Full plus daily incrementals\n3 year retention\n$2/month'; break;
+                case 'bronze': val = 'Monthly Full plus daily incrementals\n1 year retention\n$1/month'; break;
+                }
+			document.getElementById("details").value=val;
+			} 
+		 </script>
+ 
+    </head>
+    <body>
+      <div class="container">
+	    <br>
+		<div class="content">
+			<br>
+			<h1><b>Register VM</b></h1>
+			<form method="post" action="{{ url_for('registervm') }}">
+
+			<table align="center" width="350">
+
+			<tr>
+			  <td width="50%">
+				<b>VM Name</b>
+			  <td width="50%">
+				<input type="text" name="host" style="width: 100%; height:30px; font-size:12pt;"><br>
+
+			<tr>
+			  <td>
+				<b>Backup Policy</b>
+			  <td>
+				<select name="policy" style="width: 100%; height:30px; font-size:12pt;" id="policy" onchange="showpolicy(this)"><br>
+					<option disabled selected value>-- select policy --</option>
+					<option value="gold">Gold</option>
+					<option value="silver">Silver</option>
+					<option value="bronze">Bronze</option>
+				</select>
+
+			<tr>
+			  <td>
+				<b>Policy Details</b>
+
+			</table>
+
+			<textarea readonly disabled rows="3" style="width:320px; font-size:11pt;" name="policy" id="details" value="">
+			</textarea>
+			<br>
+			<br>
+
+			<input class="btn-blue" type="submit" value="SUBMIT"/>
+			<br><br>
+			<img src="static/dell_emc_logo.png" width="300">
+		</div>
+	  </div>
+    </body>
+</html>
+ 

@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <!link rel=stylesheet type=text/css href="style.css">
+		<meta http-equiv=“Content-Type” content=“text/html; charset=utf-8”>
+		<meta name="viewport" content="width=410, initial-scale=0.90">
+
+		<script>
+		 function setVmName() {
+			 document.getElementById("targetvm").value='restored_' + document.getElementById("sourcevm").value;
+			} 
+		 </script>
+
+    </head>
+
+    <body>
+      <div class="container">
+	    <br>
+		<div class="content">
+			<br>
+			<h1><b>Restore Backup</b></h1>
+			<form method="post" action="{{ url_for('restorebackup') }}">
+
+			<table align="center" width="350">
+
+			<tr>
+			  <td>
+				<b>Source VM</b>
+			  <td>
+				<select name="sourcevm" id="sourcevm" style="width: 100%; height:30px; font-size:12pt;" onchange="setVmName()"><br>
+					<option disabled selected value></option>
+				  	{% for vm in vms %}
+					<option value="{{ vm }}">{{ vm }}</option>
+					{% endfor %}
+				</select>
+
+			<tr>
+			  <td>
+				<b>Target VM</b>
+			  <td>
+				<input type="text" readonly disabled name="targetvm" id="targetvm" value="" style="width: 100%; height:30px; font-size:12pt;"><br>
+								
+			<tr>
+			  <td>
+				<b>Restore</b>
+			  <td>
+				<select name="restoretype" style="width: 100%; height:30px; font-size:12pt;"><br>
+					<option value="1234">Last backup</option>
+					<option value="2345">2 days ago</option>
+					<option value="3456">3 days ago</option>
+				</select>
+
+			</table>
+			<br>
+
+			<input class="btn-blue" type="submit" value="SUBMIT"/>
+			<br><br>
+			<img src="static/dell_emc_logo.png" width="300">
+		</div>
+	  </div>
+    </body>
+</html>
+ 

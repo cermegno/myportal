@@ -1,0 +1,26 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: myportal-deployment
+spec:
+  replicas: 1
+
+  # Which pods are managed by this deployment?
+  selector:
+    # This must match the labels we set on the pod!
+    matchLabels:
+      name: myportal
+  
+  # The template field is a regular pod configuration nested inside the deployment spec
+  template:
+    metadata:
+      # Set labels on the pod. This is used in the deployment selector.
+      labels:
+        name: myportal
+    spec:
+      containers:
+        - name: myportal
+          image: docker.io/cermegno/myportal
+          ports:
+          - containerPort: 80
+

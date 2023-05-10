@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <!link rel=stylesheet type=text/css href="style.css">
+		<meta http-equiv=“Content-Type” content=“text/html; charset=utf-8”>
+		<meta name="viewport" content="width=410, initial-scale=0.90">
+    </head>
+    <body>
+      <div class="container">
+	    <br>
+		<div class="content">
+			<br>
+			<h1><b>VM Provisioning</b></h1>
+			<form method="post" action="{{ url_for('vm') }}">
+
+			<table align="center" width="350">
+
+			<tr>
+			  <td width="60%">
+				<b>VM Name</b>
+			  <td width="40%">
+				<input type="text" name="host" style="width: 100%; height:30px; font-size:12pt;"><br>
+
+			<tr>
+			  <td>
+				<b>Number of vCPU</b>
+			  <td>
+				<input type="text" name="vcpu" style="width: 100%; height:30px; font-size:12pt;"><br>
+				
+			<tr>
+			  <td>
+				<b>Memory (MB)</b>
+			  <td>
+				<input type="text" name="ram" style="width: 100%; height:30px; font-size:12pt;"><br>
+				
+			<tr>
+			  <td>
+				<b>Operating System</b>
+			  <td>
+				<select name="os" style="width: 100%; height:30px; font-size:12pt;"><br>
+					<option value="centos7" selected>CentOS 7</option>
+					<option value="centos8">CentOS 8</option>
+					<option value="ubuntu20">Ubuntu 20</option>
+					<option value="windows10">Windows 10</option>
+				</select>
+
+			</table>
+			<br>
+
+			<input class="btn-blue" type="submit" value="SUBMIT"/>
+			<br><br>
+			<img src="static/dell_emc_logo.png" width="300">
+		</div>
+	  </div>
+    </body>
+</html>
+ 
