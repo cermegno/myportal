@@ -11,4 +11,5 @@ Small web app to demonstrate developer workflow
 - The container image is pushed to a repo in DockerHub (https://hub.docker.com/r/cermegno/myportal/tags)
 - Developer deploys the container in Kubernetes (sample manifests in the k8s-manifests folder)
 - Web app can be accessed as a NodePort on port 30001, ex: http://172.24.164.67:30001/
+
 ![Developer Workflow](/dev-workflow.png)
