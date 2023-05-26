@@ -15,6 +15,9 @@ Small web app to demonstrate developer workflow
 ![Developer Workflow](/dev-workflow.png)
 
 ## Demo instructions
-- Show this repo
+- Provision namespace from ServiceNow
 - Putty into kube client VM
-- 
+- Show and describe namespace
+- Apply deployment and services manifest
+- Show MyPortal app
+- Provision S3 bucket
