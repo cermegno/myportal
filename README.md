@@ -18,6 +18,6 @@ Small web app to demonstrate developer workflow
 - Provision namespace from ServiceNow
 - Putty into kube client VM
 - Show and describe namespace
-- Apply deployment and services manifest
+- Apply deployment and services manifest "in the new namespace"
 - Show MyPortal app
 - Provision S3 bucket
