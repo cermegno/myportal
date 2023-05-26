@@ -13,3 +13,8 @@ Small web app to demonstrate developer workflow
 - Web app can be accessed as a NodePort on port 30001, ex: http://172.24.164.67:30001/
 
 ![Developer Workflow](/dev-workflow.png)
+
+## Demo instructions
+- Show this repo
+- Putty into kube client VM
+- 
